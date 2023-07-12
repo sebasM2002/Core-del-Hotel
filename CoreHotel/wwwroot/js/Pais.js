@@ -59,7 +59,7 @@ function LoadIndex() {
                 '<td>' + result.id_Pais + '</td>' +
                 '<td>' + result.name + '</td>' +
                 '</tr>';
-            $('#table tbody').append(row);
+            $('#details tbody').append(row);
         },
         error: function (err) {
             console.log(err);
@@ -90,13 +90,11 @@ function DeleteRecord() {
 
 function CreateRecord() {
     var newName = $("#nameInput").val();
-    var id = $("idInput").val();// Assuming you have an input field with id "nameInput"
     $.ajax({
         type: "POST",
         url: "//localhost:44334/api/PaisModels",
         data: JSON.stringify({
-            id_Pais = id,
-            name=newName
+            name: newName
             
         }),
         contentType: "application/json",
