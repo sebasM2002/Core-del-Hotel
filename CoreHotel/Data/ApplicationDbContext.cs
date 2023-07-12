@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System.Reflection.Emit;
 using System.Reflection.Metadata;
+using CoreHotel.DTO;
 
 namespace CoreHotel.Data
 {
@@ -34,5 +35,6 @@ namespace CoreHotel.Data
         public DbSet<TarjetasCreditoModel> Tarjetas { get; set; } 
         public DbSet<TipoHabitacionModel> TipoHabitacion { get; set; }
         public DbSet<TipoTransModel> TipoTransaccion { get; set; }
+        public DbSet<CoreHotel.DTO.RoleDTO> RoleDTO { get; set; } = default!;
     }
 }
