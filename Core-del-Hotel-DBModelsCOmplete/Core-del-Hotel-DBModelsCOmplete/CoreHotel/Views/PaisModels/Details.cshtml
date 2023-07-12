@@ -1,0 +1,30 @@
+﻿@model CoreHotel.Models.PaisModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+<script src="https://code.jquery.com/jquery-latest.min.js"></script>
+<script src="includes/js/jquery-latest.min.js"></script>
+<script src="~/js/Pais.js"></script>
+
+<h1>Details</h1>
+
+<div>
+    <h4>PaisModel</h4>
+    <hr />
+    <input type="hidden" id="idInput" asp-for="Id_Pais" />
+    <button onClick="LoadIndex()">Yes</button>
+    <table id="details" class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id_Pais">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
