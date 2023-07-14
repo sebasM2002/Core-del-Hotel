@@ -20,21 +20,18 @@ namespace CoreHotel.Data
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<ServicioHuespedModel>()
-                        .HasKey(c => new { c.Id_servicio, c.Id_Huesped });
+            modelBuilder.Entity<ServicioFacturaModel>()
+                        .HasKey(c => new { c.Id_servicio, c.Id_Factura});
         }
 
-        public DbSet <EmpleadoosModel> Empleados { get; set; }
-        public DbSet <PaisModel> Paises { get; set; }
-        public DbSet<FacturaReservacionModel> Factura_Reservacion { get; set; }
-        public DbSet<ServicioHuespedModel> Servicios_Huesped { get; set; }
+        public DbSet <EmpleadosModel> Empleados { get; set; }
+        public DbSet<FacturaModel> Facturas { get; set; }
+        public DbSet<ServicioFacturaModel> ServiciosFactura { get; set; }
         public DbSet<HabitacionesModel> Habitaciones { get; set; }
         public DbSet<HuespedModel> Huesped { get; set; }
         public DbSet<ReservacionesModel> Reservaciones { get; set; }
         public DbSet<ServicioModel> Servicios { get; set; }
         public DbSet<TarjetasCreditoModel> Tarjetas { get; set; } 
-        public DbSet<TipoHabitacionModel> TipoHabitacion { get; set; }
-        public DbSet<TipoTransModel> TipoTransaccion { get; set; }
-        public DbSet<CoreHotel.DTO.RoleDTO> RoleDTO { get; set; } = default!;
+        public DbSet<CuentasPorCobrarModel> CuentasPorCobrar { get; set; }
     }
 }

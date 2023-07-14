@@ -15,18 +15,14 @@ namespace CoreHotel.Models
         [Required]
         [DataType(DataType.Currency)]
         [RegularExpression(@"^\$?\d+(\.(\d{2}))?$")]
-        public decimal Price { get; set; }
+        public decimal Precio { get; set; }
 
-        public bool Is_deleted { get; set; }
+        public bool? Is_deleted { get; set; }
 
         [Required]
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-        public DateTime Created_at { get; set; }
+        public string Created_at { get; set; }
 
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-        public DateTime Updated_at { get; set; }
+        public string? Updated_at { get; set; }
 
 
     }

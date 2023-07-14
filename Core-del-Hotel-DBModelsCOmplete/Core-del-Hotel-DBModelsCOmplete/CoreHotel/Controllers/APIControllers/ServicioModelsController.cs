@@ -29,7 +29,7 @@ namespace CoreHotel.Controllers.APIControllers
           {
               return NotFound();
           }
-            return await _context.Servicios.ToListAsync();
+            return await _context.Servicios.Where(x => x.Is_deleted != true).ToListAsync();
         }
 
         // GET: api/ServicioModels/5
@@ -64,6 +64,7 @@ namespace CoreHotel.Controllers.APIControllers
 
             try
             {
+                servicioModel.Updated_at = DateTime.Now.ToString();
                 await _context.SaveChangesAsync();
             }
             catch (DbUpdateConcurrencyException)
@@ -90,6 +91,8 @@ namespace CoreHotel.Controllers.APIControllers
           {
               return Problem("Entity set 'ApplicationDbContext.Servicios'  is null.");
           }
+            servicioModel.Created_at = DateTime.Now.ToString();
+            servicioModel.Is_deleted = false;
             _context.Servicios.Add(servicioModel);
             await _context.SaveChangesAsync();
 
@@ -110,7 +113,7 @@ namespace CoreHotel.Controllers.APIControllers
                 return NotFound();
             }
 
-            _context.Servicios.Remove(servicioModel);
+            servicioModel.Is_deleted = true;
             await _context.SaveChangesAsync();
 
             return NoContent();

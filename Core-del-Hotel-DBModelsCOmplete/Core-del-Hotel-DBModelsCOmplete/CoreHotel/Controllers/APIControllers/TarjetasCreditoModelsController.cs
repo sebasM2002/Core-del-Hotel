@@ -29,7 +29,7 @@ namespace CoreHotel.Controllers.APIControllers
           {
               return NotFound();
           }
-            return await _context.Tarjetas.ToListAsync();
+            return await _context.Tarjetas.Where(x => x.Is_deleted != true).ToListAsync();
         }
 
         // GET: api/TarjetasCreditoModels/5
@@ -64,6 +64,7 @@ namespace CoreHotel.Controllers.APIControllers
 
             try
             {
+                tarjetasCreditoModel.Updated_at = DateTime.Now.ToString();
                 await _context.SaveChangesAsync();
             }
             catch (DbUpdateConcurrencyException)
@@ -90,10 +91,20 @@ namespace CoreHotel.Controllers.APIControllers
           {
               return Problem("Entity set 'ApplicationDbContext.Tarjetas'  is null.");
           }
-            _context.Tarjetas.Add(tarjetasCreditoModel);
-            await _context.SaveChangesAsync();
+            if(_context.Tarjetas.Where(t => t.numero == tarjetasCreditoModel.numero).Count() == 0 && tarjetasCreditoModel.numero.Length <= 16 && DateTime.Parse(tarjetasCreditoModel.FechaVencimiento) > DateTime.Now)
+            {
+                tarjetasCreditoModel.Created_at = DateTime.Now.ToString();
+                tarjetasCreditoModel.Is_deleted = false;
+                _context.Tarjetas.Add(tarjetasCreditoModel);
+                await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetTarjetasCreditoModel", new { id = tarjetasCreditoModel.Id_tarjeta }, tarjetasCreditoModel);
+                return CreatedAtAction("GetTarjetasCreditoModel", new { id = tarjetasCreditoModel.Id_tarjeta }, tarjetasCreditoModel);
+            }
+            else
+            {
+                return NoContent();
+            }
+            
         }
 
         // DELETE: api/TarjetasCreditoModels/5
@@ -110,7 +121,7 @@ namespace CoreHotel.Controllers.APIControllers
                 return NotFound();
             }
 
-            _context.Tarjetas.Remove(tarjetasCreditoModel);
+            tarjetasCreditoModel.Is_deleted = true;
             await _context.SaveChangesAsync();
 
             return NoContent();

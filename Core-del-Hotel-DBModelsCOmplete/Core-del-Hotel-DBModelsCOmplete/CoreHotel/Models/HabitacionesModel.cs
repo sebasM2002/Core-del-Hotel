@@ -7,10 +7,7 @@ namespace CoreHotel.Models
     {
         [Key]
         public int Id_Habitacion { get; set; }
-        [Required]
-        public int Id_TipoHabitacion { get; set; }
-        [ForeignKey("Id_TipoHabitacion")]
-        public TipoHabitacionModel TipoHabitacionModel { get; set; }
+  
 
         [Required]
         [DataType(DataType.Text)]
@@ -18,19 +15,17 @@ namespace CoreHotel.Models
         public string descripcion { get; set; }
 
         [Required]
-        [DataType(DataType.Currency)]
-        [RegularExpression(@"^\$?\d+(\.(\d{2}))?$")]
-        public decimal Precio { get; set; }
-
-        public bool Is_deleted { get; set; }
+        public int Limite { get; set; }
 
         [Required]
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-        public DateTime Created_at { get; set; }
+        [DataType(DataType.Currency)]
+        [RegularExpression(@"^\$?\d+(\.(\d{2}))?$")]
+        public decimal Precio_por_noche { get; set; }
 
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-        public DateTime Updated_at { get; set; }
+        public bool? Is_deleted { get; set; }
+
+        public string Created_at { get; set; }
+
+        public string? Updated_at { get; set; }
     }
 }

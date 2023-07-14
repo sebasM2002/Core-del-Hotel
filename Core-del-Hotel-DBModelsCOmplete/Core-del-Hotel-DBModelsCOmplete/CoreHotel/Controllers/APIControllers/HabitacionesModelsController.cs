@@ -29,7 +29,7 @@ namespace CoreHotel.Controllers.APIControllers
           {
               return NotFound();
           }
-            return await _context.Habitaciones.ToListAsync();
+            return await _context.Habitaciones.Where(x => x.Is_deleted != true).ToListAsync();
         }
 
         // GET: api/HabitacionesModels/5
@@ -64,6 +64,7 @@ namespace CoreHotel.Controllers.APIControllers
 
             try
             {
+                habitacionesModel.Updated_at = DateTime.Now.ToString();
                 await _context.SaveChangesAsync();
             }
             catch (DbUpdateConcurrencyException)
@@ -90,6 +91,8 @@ namespace CoreHotel.Controllers.APIControllers
           {
               return Problem("Entity set 'ApplicationDbContext.Habitaciones'  is null.");
           }
+            habitacionesModel.Created_at = DateTime.Now.ToString();
+            habitacionesModel.Is_deleted = false;
             _context.Habitaciones.Add(habitacionesModel);
             await _context.SaveChangesAsync();
 
@@ -110,7 +113,7 @@ namespace CoreHotel.Controllers.APIControllers
                 return NotFound();
             }
 
-            _context.Habitaciones.Remove(habitacionesModel);
+            habitacionesModel.Is_deleted = true;
             await _context.SaveChangesAsync();
 
             return NoContent();

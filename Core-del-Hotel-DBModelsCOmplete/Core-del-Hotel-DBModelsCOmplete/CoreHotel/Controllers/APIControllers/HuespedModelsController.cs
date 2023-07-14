@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using CoreHotel.Data;
 using CoreHotel.Models;
+using CoreHotel.DTO;
+using Microsoft.AspNetCore.Identity;
 
 namespace CoreHotel.Controllers.APIControllers
 {
@@ -15,10 +17,12 @@ namespace CoreHotel.Controllers.APIControllers
     public class HuespedModelsController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
+        private readonly UserManager<IdentityUser> _userManager;
 
-        public HuespedModelsController(ApplicationDbContext context)
+        public HuespedModelsController(ApplicationDbContext context, UserManager<IdentityUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
         // GET: api/HuespedModels
@@ -29,7 +33,7 @@ namespace CoreHotel.Controllers.APIControllers
           {
               return NotFound();
           }
-            return await _context.Huesped.ToListAsync();
+            return await _context.Huesped.Where(x => x.Is_deleted != true).ToListAsync();
         }
 
         // GET: api/HuespedModels/5
@@ -64,6 +68,7 @@ namespace CoreHotel.Controllers.APIControllers
 
             try
             {
+                huespedModel.Updated_at = DateTime.Now.ToString();
                 await _context.SaveChangesAsync();
             }
             catch (DbUpdateConcurrencyException)
@@ -84,16 +89,32 @@ namespace CoreHotel.Controllers.APIControllers
         // POST: api/HuespedModels
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<HuespedModel>> PostHuespedModel(HuespedModel huespedModel)
+        public async Task<ActionResult<HuespedModel>> PostHuespedModel(RegistrarHuespedDTO huespedModel)
         {
-          if (_context.Huesped == null)
-          {
-              return Problem("Entity set 'ApplicationDbContext.Huesped'  is null.");
-          }
-            _context.Huesped.Add(huespedModel);
-            await _context.SaveChangesAsync();
+            var user = new IdentityUser { UserName = huespedModel.email, Email = huespedModel.email };
+            var result = await _userManager.CreateAsync(user, huespedModel.password);
+            if (result.Succeeded)
+            {
+                if (_context.Huesped == null)
+                {
+                    return Problem("Entity set 'ApplicationDbContext.Huesped'  is null.");
+                }
+                HuespedModel huesped = new HuespedModel();
+                huesped.Nombre = huespedModel.Nombre;
+                huesped.Apellidos = huespedModel.Apellidos;
+                huesped.Telefono = huespedModel.Telefono;
+                huesped.Created_at = DateTime.Now.ToString();
+                huesped.Id_Usuario = user.Id;
+                huesped.Is_deleted = false;
+                _context.Huesped.Add(huesped);
+                await _context.SaveChangesAsync();
+                return Ok(huesped);
+            }
 
-            return CreatedAtAction("GetHuespedModel", new { id = huespedModel.Id_Huesped }, huespedModel);
+            else
+            {
+                return BadRequest("Username or password invalid");
+            }
         }
 
         // DELETE: api/HuespedModels/5
@@ -110,7 +131,7 @@ namespace CoreHotel.Controllers.APIControllers
                 return NotFound();
             }
 
-            _context.Huesped.Remove(huespedModel);
+            huespedModel.Is_deleted = true;
             await _context.SaveChangesAsync();
 
             return NoContent();

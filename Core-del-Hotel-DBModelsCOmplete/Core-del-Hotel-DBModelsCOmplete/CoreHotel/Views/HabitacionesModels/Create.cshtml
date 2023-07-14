@@ -1,0 +1,64 @@
+﻿@model CoreHotel.Models.HabitacionesModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>HabitacionesModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="descripcion" class="control-label"></label>
+                <div>
+                    <select asp-for="descripcion" class="col-3 form-control">
+                        <option>Habitación sencilla</option>
+                        <option>Habitación doble</option>
+                        <option>Habitación familiar</option>
+                    </select>
+                </div>
+                <span asp-validation-for="descripcion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Limite" class="control-label"></label>
+                <div>
+                    <select asp-for="Limite" class="col-3 form-control">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                    </select>
+                </div>
+                
+                <span asp-validation-for="Limite" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Precio_por_noche" class="control-label"></label>
+                <input asp-for="Precio_por_noche" class="form-control" />
+                <span asp-validation-for="Precio_por_noche" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Created_at" class="control-label" hidden></label>
+                <input asp-for="Created_at" class="form-control" value="@DateTime.Now" hidden/>
+                <span asp-validation-for="Created_at" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

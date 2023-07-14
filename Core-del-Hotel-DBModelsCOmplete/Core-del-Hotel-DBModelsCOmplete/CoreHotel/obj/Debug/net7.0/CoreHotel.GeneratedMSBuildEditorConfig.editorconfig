@@ -44,6 +44,50 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/sebas/source/repos/Core-del-Hotel/Core-del-Hotel-DBModelsCOmplete/Core-del-Hotel-DBModelsCOmplete/CoreHotel/Views/EmpleadosModels/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbGVhZG9zTW9kZWxzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sebas/source/repos/Core-del-Hotel/Core-del-Hotel-DBModelsCOmplete/Core-del-Hotel-DBModelsCOmplete/CoreHotel/Views/EmpleadosModels/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbGVhZG9zTW9kZWxzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sebas/source/repos/Core-del-Hotel/Core-del-Hotel-DBModelsCOmplete/Core-del-Hotel-DBModelsCOmplete/CoreHotel/Views/EmpleadosModels/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbGVhZG9zTW9kZWxzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sebas/source/repos/Core-del-Hotel/Core-del-Hotel-DBModelsCOmplete/Core-del-Hotel-DBModelsCOmplete/CoreHotel/Views/EmpleadosModels/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbGVhZG9zTW9kZWxzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sebas/source/repos/Core-del-Hotel/Core-del-Hotel-DBModelsCOmplete/Core-del-Hotel-DBModelsCOmplete/CoreHotel/Views/EmpleadosModels/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbGVhZG9zTW9kZWxzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sebas/source/repos/Core-del-Hotel/Core-del-Hotel-DBModelsCOmplete/Core-del-Hotel-DBModelsCOmplete/CoreHotel/Views/FacturaModels/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFjdHVyYU1vZGVsc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sebas/source/repos/Core-del-Hotel/Core-del-Hotel-DBModelsCOmplete/Core-del-Hotel-DBModelsCOmplete/CoreHotel/Views/HabitacionesModels/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGFiaXRhY2lvbmVzTW9kZWxzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sebas/source/repos/Core-del-Hotel/Core-del-Hotel-DBModelsCOmplete/Core-del-Hotel-DBModelsCOmplete/CoreHotel/Views/HabitacionesModels/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGFiaXRhY2lvbmVzTW9kZWxzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sebas/source/repos/Core-del-Hotel/Core-del-Hotel-DBModelsCOmplete/Core-del-Hotel-DBModelsCOmplete/CoreHotel/Views/HabitacionesModels/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGFiaXRhY2lvbmVzTW9kZWxzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sebas/source/repos/Core-del-Hotel/Core-del-Hotel-DBModelsCOmplete/Core-del-Hotel-DBModelsCOmplete/CoreHotel/Views/HabitacionesModels/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGFiaXRhY2lvbmVzTW9kZWxzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sebas/source/repos/Core-del-Hotel/Core-del-Hotel-DBModelsCOmplete/Core-del-Hotel-DBModelsCOmplete/CoreHotel/Views/HabitacionesModels/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGFiaXRhY2lvbmVzTW9kZWxzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/sebas/source/repos/Core-del-Hotel/Core-del-Hotel-DBModelsCOmplete/Core-del-Hotel-DBModelsCOmplete/CoreHotel/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -52,24 +96,32 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sebas/source/repos/Core-del-Hotel/Core-del-Hotel-DBModelsCOmplete/Core-del-Hotel-DBModelsCOmplete/CoreHotel/Views/PaisModels/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFpc01vZGVsc1xDcmVhdGUuY3NodG1s
+[C:/Users/sebas/source/repos/Core-del-Hotel/Core-del-Hotel-DBModelsCOmplete/Core-del-Hotel-DBModelsCOmplete/CoreHotel/Views/HuespedModels/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSHVlc3BlZE1vZGVsc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sebas/source/repos/Core-del-Hotel/Core-del-Hotel-DBModelsCOmplete/Core-del-Hotel-DBModelsCOmplete/CoreHotel/Views/PaisModels/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFpc01vZGVsc1xEZWxldGUuY3NodG1s
+[C:/Users/sebas/source/repos/Core-del-Hotel/Core-del-Hotel-DBModelsCOmplete/Core-del-Hotel-DBModelsCOmplete/CoreHotel/Views/HuespedModels/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSHVlc3BlZE1vZGVsc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sebas/source/repos/Core-del-Hotel/Core-del-Hotel-DBModelsCOmplete/Core-del-Hotel-DBModelsCOmplete/CoreHotel/Views/PaisModels/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFpc01vZGVsc1xEZXRhaWxzLmNzaHRtbA==
+[C:/Users/sebas/source/repos/Core-del-Hotel/Core-del-Hotel-DBModelsCOmplete/Core-del-Hotel-DBModelsCOmplete/CoreHotel/Views/HuespedModels/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSHVlc3BlZE1vZGVsc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sebas/source/repos/Core-del-Hotel/Core-del-Hotel-DBModelsCOmplete/Core-del-Hotel-DBModelsCOmplete/CoreHotel/Views/PaisModels/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFpc01vZGVsc1xFZGl0LmNzaHRtbA==
+[C:/Users/sebas/source/repos/Core-del-Hotel/Core-del-Hotel-DBModelsCOmplete/Core-del-Hotel-DBModelsCOmplete/CoreHotel/Views/HuespedModels/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSHVlc3BlZE1vZGVsc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sebas/source/repos/Core-del-Hotel/Core-del-Hotel-DBModelsCOmplete/Core-del-Hotel-DBModelsCOmplete/CoreHotel/Views/PaisModels/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFpc01vZGVsc1xJbmRleC5jc2h0bWw=
+[C:/Users/sebas/source/repos/Core-del-Hotel/Core-del-Hotel-DBModelsCOmplete/Core-del-Hotel-DBModelsCOmplete/CoreHotel/Views/HuespedModels/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSHVlc3BlZE1vZGVsc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sebas/source/repos/Core-del-Hotel/Core-del-Hotel-DBModelsCOmplete/Core-del-Hotel-DBModelsCOmplete/CoreHotel/Views/ReservacionesModels/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YWNpb25lc01vZGVsc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sebas/source/repos/Core-del-Hotel/Core-del-Hotel-DBModelsCOmplete/Core-del-Hotel-DBModelsCOmplete/CoreHotel/Views/ReservacionesModels/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YWNpb25lc01vZGVsc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/sebas/source/repos/Core-del-Hotel/Core-del-Hotel-DBModelsCOmplete/Core-del-Hotel-DBModelsCOmplete/CoreHotel/Views/RoleDTOes/Create.cshtml]
@@ -92,6 +144,46 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZURUT2VzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/sebas/source/repos/Core-del-Hotel/Core-del-Hotel-DBModelsCOmplete/Core-del-Hotel-DBModelsCOmplete/CoreHotel/Views/ServicioFacturaModels/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljaW9GYWN0dXJhTW9kZWxzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sebas/source/repos/Core-del-Hotel/Core-del-Hotel-DBModelsCOmplete/Core-del-Hotel-DBModelsCOmplete/CoreHotel/Views/ServicioFacturaModels/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljaW9GYWN0dXJhTW9kZWxzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sebas/source/repos/Core-del-Hotel/Core-del-Hotel-DBModelsCOmplete/Core-del-Hotel-DBModelsCOmplete/CoreHotel/Views/ServicioFacturaModels/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljaW9GYWN0dXJhTW9kZWxzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sebas/source/repos/Core-del-Hotel/Core-del-Hotel-DBModelsCOmplete/Core-del-Hotel-DBModelsCOmplete/CoreHotel/Views/ServicioFacturaModels/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljaW9GYWN0dXJhTW9kZWxzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sebas/source/repos/Core-del-Hotel/Core-del-Hotel-DBModelsCOmplete/Core-del-Hotel-DBModelsCOmplete/CoreHotel/Views/ServicioFacturaModels/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljaW9GYWN0dXJhTW9kZWxzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sebas/source/repos/Core-del-Hotel/Core-del-Hotel-DBModelsCOmplete/Core-del-Hotel-DBModelsCOmplete/CoreHotel/Views/ServicioModels/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljaW9Nb2RlbHNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sebas/source/repos/Core-del-Hotel/Core-del-Hotel-DBModelsCOmplete/Core-del-Hotel-DBModelsCOmplete/CoreHotel/Views/ServicioModels/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljaW9Nb2RlbHNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sebas/source/repos/Core-del-Hotel/Core-del-Hotel-DBModelsCOmplete/Core-del-Hotel-DBModelsCOmplete/CoreHotel/Views/ServicioModels/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljaW9Nb2RlbHNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sebas/source/repos/Core-del-Hotel/Core-del-Hotel-DBModelsCOmplete/Core-del-Hotel-DBModelsCOmplete/CoreHotel/Views/ServicioModels/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljaW9Nb2RlbHNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sebas/source/repos/Core-del-Hotel/Core-del-Hotel-DBModelsCOmplete/Core-del-Hotel-DBModelsCOmplete/CoreHotel/Views/ServicioModels/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljaW9Nb2RlbHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/sebas/source/repos/Core-del-Hotel/Core-del-Hotel-DBModelsCOmplete/Core-del-Hotel-DBModelsCOmplete/CoreHotel/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -102,6 +194,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/sebas/source/repos/Core-del-Hotel/Core-del-Hotel-DBModelsCOmplete/Core-del-Hotel-DBModelsCOmplete/CoreHotel/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sebas/source/repos/Core-del-Hotel/Core-del-Hotel-DBModelsCOmplete/Core-del-Hotel-DBModelsCOmplete/CoreHotel/Views/TarjetasCreditoModels/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFyamV0YXNDcmVkaXRvTW9kZWxzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/sebas/source/repos/Core-del-Hotel/Core-del-Hotel-DBModelsCOmplete/Core-del-Hotel-DBModelsCOmplete/CoreHotel/Views/_ViewImports.cshtml]

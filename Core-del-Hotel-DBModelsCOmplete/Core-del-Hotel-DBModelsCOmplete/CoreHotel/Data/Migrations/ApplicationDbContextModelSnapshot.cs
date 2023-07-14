@@ -17,12 +17,47 @@ namespace CoreHotel.Data.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "7.0.7")
+                .HasAnnotation("ProductVersion", "7.0.9")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("CoreHotel.Models.EmpleadoosModel", b =>
+            modelBuilder.Entity("CoreHotel.Models.CuentasPorCobrarModel", b =>
+                {
+                    b.Property<int>("id_cuenta")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id_cuenta"));
+
+                    b.Property<string>("Fecha_vencimiento")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("balance")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("created_at")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("id_factura")
+                        .HasColumnType("int");
+
+                    b.Property<bool?>("is_deleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("updated_at")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("id_cuenta");
+
+                    b.HasIndex("id_factura");
+
+                    b.ToTable("CuentasPorCobrar");
+                });
+
+            modelBuilder.Entity("CoreHotel.Models.EmpleadosModel", b =>
                 {
                     b.Property<int>("Id_Empleados")
                         .ValueGeneratedOnAdd()
@@ -30,25 +65,19 @@ namespace CoreHotel.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id_Empleados"));
 
-                    b.Property<string>("Correo_electronico")
+                    b.Property<string>("Created_at")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("Created_at")
-                        .HasColumnType("datetime2");
 
                     b.Property<string>("Direccion")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Id_Pais")
-                        .HasColumnType("int");
-
                     b.Property<string>("Id_Usuario")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("Is_deleted")
+                    b.Property<bool?>("Is_deleted")
                         .HasColumnType("bit");
 
                     b.Property<string>("Nombre")
@@ -59,49 +88,53 @@ namespace CoreHotel.Data.Migrations
                     b.Property<decimal>("Sueldo")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<int>("Telefono")
-                        .HasMaxLength(15)
-                        .HasColumnType("int");
+                    b.Property<string>("Telefono")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("Updated_at")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("Updated_at")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id_Empleados");
-
-                    b.HasIndex("Id_Pais");
-
-                    b.HasIndex("Id_Usuario");
 
                     b.ToTable("Empleados");
                 });
 
-            modelBuilder.Entity("CoreHotel.Models.FacturaReservacionModel", b =>
+            modelBuilder.Entity("CoreHotel.Models.FacturaModel", b =>
                 {
-                    b.Property<int>("Id_Transaccion")
+                    b.Property<int>("Id_Factura")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id_Transaccion"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id_Factura"));
 
-                    b.Property<DateTime>("Fecha")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("Fecha")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Id_Reservacion")
                         .HasColumnType("int");
 
-                    b.Property<int>("Id_TipoTransaccion")
-                        .HasColumnType("int");
+                    b.Property<string>("Metodo_de_pago")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<decimal>("monto")
+                    b.Property<decimal>("Monto_total")
                         .HasColumnType("decimal(18,2)");
 
-                    b.HasKey("Id_Transaccion");
+                    b.Property<string>("created_at")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.HasIndex("Id_Reservacion");
+                    b.Property<bool?>("is_deleted")
+                        .HasColumnType("bit");
 
-                    b.HasIndex("Id_TipoTransaccion");
+                    b.Property<string>("updated_at")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.ToTable("Factura_Reservacion");
+                    b.HasKey("Id_Factura");
+
+                    b.ToTable("Facturas");
                 });
 
             modelBuilder.Entity("CoreHotel.Models.HabitacionesModel", b =>
@@ -112,20 +145,21 @@ namespace CoreHotel.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id_Habitacion"));
 
-                    b.Property<DateTime>("Created_at")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("Created_at")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Id_TipoHabitacion")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("Is_deleted")
+                    b.Property<bool?>("Is_deleted")
                         .HasColumnType("bit");
 
-                    b.Property<decimal>("Precio")
+                    b.Property<int>("Limite")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("Precio_por_noche")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<DateTime>("Updated_at")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("Updated_at")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("descripcion")
                         .IsRequired()
@@ -133,8 +167,6 @@ namespace CoreHotel.Data.Migrations
                         .HasColumnType("nvarchar(100)");
 
                     b.HasKey("Id_Habitacion");
-
-                    b.HasIndex("Id_TipoHabitacion");
 
                     b.ToTable("Habitaciones");
                 });
@@ -147,22 +179,20 @@ namespace CoreHotel.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id_Huesped"));
 
-                    b.Property<string>("Appelidos")
+                    b.Property<string>("Apellidos")
                         .IsRequired()
                         .HasMaxLength(55)
                         .HasColumnType("nvarchar(55)");
 
-                    b.Property<DateTime>("Created_at")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("Id_Pais")
-                        .HasColumnType("int");
+                    b.Property<string>("Created_at")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Id_Usuario")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("Is_deleted")
+                    b.Property<bool?>("Is_deleted")
                         .HasColumnType("bit");
 
                     b.Property<string>("Nombre")
@@ -170,37 +200,16 @@ namespace CoreHotel.Data.Migrations
                         .HasMaxLength(55)
                         .HasColumnType("nvarchar(55)");
 
-                    b.Property<int>("Telefono")
-                        .HasMaxLength(15)
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("Updated_at")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id_Huesped");
-
-                    b.HasIndex("Id_Pais");
-
-                    b.HasIndex("Id_Usuario");
-
-                    b.ToTable("Huesped");
-                });
-
-            modelBuilder.Entity("CoreHotel.Models.PaisModel", b =>
-                {
-                    b.Property<int>("Id_Pais")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id_Pais"));
-
-                    b.Property<string>("Name")
+                    b.Property<string>("Telefono")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id_Pais");
+                    b.Property<string>("Updated_at")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.ToTable("Paises");
+                    b.HasKey("Id_Huesped");
+
+                    b.ToTable("Huesped");
                 });
 
             modelBuilder.Entity("CoreHotel.Models.ReservacionesModel", b =>
@@ -211,14 +220,20 @@ namespace CoreHotel.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id_Reservacion"));
 
-                    b.Property<DateTime>("Created_at")
-                        .HasColumnType("datetime2");
+                    b.Property<int>("Cantidad")
+                        .HasColumnType("int");
 
-                    b.Property<DateTime>("Fecha_Entrada")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("Created_at")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("Fecha_Salida")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("Fecha_Entrada")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Fecha_Salida")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Id_Habitacion")
                         .HasColumnType("int");
@@ -226,37 +241,33 @@ namespace CoreHotel.Data.Migrations
                     b.Property<int>("Id_Huesped")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("Updated_at")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("Updated_at")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool?>("check_In")
+                        .HasColumnType("bit");
+
+                    b.Property<bool?>("is_Deleted")
+                        .HasColumnType("bit");
 
                     b.HasKey("Id_Reservacion");
-
-                    b.HasIndex("Id_Habitacion");
-
-                    b.HasIndex("Id_Huesped");
 
                     b.ToTable("Reservaciones");
                 });
 
-            modelBuilder.Entity("CoreHotel.Models.ServicioHuespedModel", b =>
+            modelBuilder.Entity("CoreHotel.Models.ServicioFacturaModel", b =>
                 {
                     b.Property<int>("Id_servicio")
                         .HasColumnType("int");
 
-                    b.Property<int>("Id_Huesped")
+                    b.Property<int>("Id_Factura")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("Created_at")
-                        .HasColumnType("datetime2");
+                    b.HasKey("Id_servicio", "Id_Factura");
 
-                    b.Property<DateTime>("Updated_at")
-                        .HasColumnType("datetime2");
+                    b.HasIndex("Id_Factura");
 
-                    b.HasKey("Id_servicio", "Id_Huesped");
-
-                    b.HasIndex("Id_Huesped");
-
-                    b.ToTable("Servicios_Huesped");
+                    b.ToTable("ServiciosFactura");
                 });
 
             modelBuilder.Entity("CoreHotel.Models.ServicioModel", b =>
@@ -267,22 +278,23 @@ namespace CoreHotel.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id_servicio"));
 
-                    b.Property<DateTime>("Created_at")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("Created_at")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Descripcion")
                         .IsRequired()
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
 
-                    b.Property<bool>("Is_deleted")
+                    b.Property<bool?>("Is_deleted")
                         .HasColumnType("bit");
 
-                    b.Property<decimal>("Price")
+                    b.Property<decimal>("Precio")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<DateTime>("Updated_at")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("Updated_at")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id_servicio");
 
@@ -297,16 +309,18 @@ namespace CoreHotel.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id_tarjeta"));
 
-                    b.Property<DateTime>("Created_at")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("Created_at")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("FechaVencimiento")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("FechaVencimiento")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Id_huesped")
                         .HasColumnType("int");
 
-                    b.Property<bool>("Is_deleted")
+                    b.Property<bool?>("Is_deleted")
                         .HasColumnType("bit");
 
                     b.Property<string>("Nombre_titular")
@@ -314,57 +328,22 @@ namespace CoreHotel.Data.Migrations
                         .HasMaxLength(55)
                         .HasColumnType("nvarchar(55)");
 
-                    b.Property<DateTime>("Updated_at")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("Updated_at")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("cvv")
                         .HasMaxLength(4)
                         .HasColumnType("int");
 
-                    b.Property<int>("numero")
-                        .HasColumnType("int");
+                    b.Property<string>("numero")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id_tarjeta");
 
                     b.HasIndex("Id_huesped");
 
                     b.ToTable("Tarjetas");
-                });
-
-            modelBuilder.Entity("CoreHotel.Models.TipoHabitacionModel", b =>
-                {
-                    b.Property<int>("Id_TipoHabitacion")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id_TipoHabitacion"));
-
-                    b.Property<string>("descripcion")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.HasKey("Id_TipoHabitacion");
-
-                    b.ToTable("TipoHabitacion");
-                });
-
-            modelBuilder.Entity("CoreHotel.Models.TipoTransModel", b =>
-                {
-                    b.Property<int>("Id_TipoTransaccion")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id_TipoTransaccion"));
-
-                    b.Property<string>("Descripcion")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.HasKey("Id_TipoTransaccion");
-
-                    b.ToTable("TipoTransaccion");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -569,98 +548,22 @@ namespace CoreHotel.Data.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("CoreHotel.Models.EmpleadoosModel", b =>
+            modelBuilder.Entity("CoreHotel.Models.CuentasPorCobrarModel", b =>
                 {
-                    b.HasOne("CoreHotel.Models.PaisModel", "PaisModel")
+                    b.HasOne("CoreHotel.Models.FacturaModel", "facturaModel")
                         .WithMany()
-                        .HasForeignKey("Id_Pais")
+                        .HasForeignKey("id_factura")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "User")
-                        .WithMany()
-                        .HasForeignKey("Id_Usuario")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("PaisModel");
-
-                    b.Navigation("User");
+                    b.Navigation("facturaModel");
                 });
 
-            modelBuilder.Entity("CoreHotel.Models.FacturaReservacionModel", b =>
+            modelBuilder.Entity("CoreHotel.Models.ServicioFacturaModel", b =>
                 {
-                    b.HasOne("CoreHotel.Models.ReservacionesModel", "ReservacionesModel")
+                    b.HasOne("CoreHotel.Models.FacturaModel", "FacturaModel")
                         .WithMany()
-                        .HasForeignKey("Id_Reservacion")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("CoreHotel.Models.TipoTransModel", "TipoTransModel")
-                        .WithMany()
-                        .HasForeignKey("Id_TipoTransaccion")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("ReservacionesModel");
-
-                    b.Navigation("TipoTransModel");
-                });
-
-            modelBuilder.Entity("CoreHotel.Models.HabitacionesModel", b =>
-                {
-                    b.HasOne("CoreHotel.Models.TipoHabitacionModel", "TipoHabitacionModel")
-                        .WithMany()
-                        .HasForeignKey("Id_TipoHabitacion")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("TipoHabitacionModel");
-                });
-
-            modelBuilder.Entity("CoreHotel.Models.HuespedModel", b =>
-                {
-                    b.HasOne("CoreHotel.Models.PaisModel", "PaisModel")
-                        .WithMany()
-                        .HasForeignKey("Id_Pais")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "User")
-                        .WithMany()
-                        .HasForeignKey("Id_Usuario")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("PaisModel");
-
-                    b.Navigation("User");
-                });
-
-            modelBuilder.Entity("CoreHotel.Models.ReservacionesModel", b =>
-                {
-                    b.HasOne("CoreHotel.Models.HabitacionesModel", "HabitacionModel")
-                        .WithMany()
-                        .HasForeignKey("Id_Habitacion")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("CoreHotel.Models.HuespedModel", "HuespedModel")
-                        .WithMany()
-                        .HasForeignKey("Id_Huesped")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("HabitacionModel");
-
-                    b.Navigation("HuespedModel");
-                });
-
-            modelBuilder.Entity("CoreHotel.Models.ServicioHuespedModel", b =>
-                {
-                    b.HasOne("CoreHotel.Models.HuespedModel", "HuespedModel")
-                        .WithMany()
-                        .HasForeignKey("Id_Huesped")
+                        .HasForeignKey("Id_Factura")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -670,7 +573,7 @@ namespace CoreHotel.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("HuespedModel");
+                    b.Navigation("FacturaModel");
 
                     b.Navigation("ServicioModel");
                 });

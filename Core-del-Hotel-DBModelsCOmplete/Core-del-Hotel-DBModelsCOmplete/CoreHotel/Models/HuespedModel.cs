@@ -11,36 +11,25 @@ namespace CoreHotel.Models
 
         [MaxLength(55)]
         [Required]
+        [DataType(DataType.Text)]
         public string Nombre { get; set; }
 
         [MaxLength(55)]
         [Required]
-        public string Appelidos { get; set; }
+        [DataType(DataType.Text)]
+        public string Apellidos { get; set; }
 
         [Required]
-
-        [MaxLength(15)]
-        [DataType(DataType.PhoneNumber)]
-        public int Telefono { get; set; }
+        public string Telefono { get; set; }
 
         [Required]
         public string Id_Usuario { get; set; }
-        [ForeignKey("Id_Usuario")]
-        public IdentityUser User { get; set; }
 
-        public int Id_Pais { get; set; }
-        [ForeignKey("Id_Pais")]
-        public PaisModel PaisModel { get; set; }
-
-        public bool Is_deleted { get; set; }
+        public bool? Is_deleted { get; set; }
 
         [Required]
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-        public DateTime Created_at { get; set; }
+        public string Created_at { get; set; }
 
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-        public DateTime Updated_at { get; set; }
+        public string? Updated_at { get; set; }
     }
 }

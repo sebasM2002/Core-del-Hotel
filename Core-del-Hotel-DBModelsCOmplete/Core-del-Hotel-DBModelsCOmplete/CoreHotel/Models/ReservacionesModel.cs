@@ -10,33 +10,26 @@ namespace CoreHotel.Models
 
         [Required]
         public int Id_Huesped { get; set; }
-        [ForeignKey("Id_Huesped")]
-        public HuespedModel HuespedModel { get; set; }
 
         [Required]
         public int Id_Habitacion { get; set; }
-        [ForeignKey("Id_Habitacion")] 
-        public HabitacionesModel HabitacionModel { get; set; }
+
+        public bool? check_In { get; set; }
+        [Required]
+        public string Fecha_Entrada{ get; set; }
 
         [Required]
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-        public DateTime Fecha_Entrada{ get; set; }
+        public string Fecha_Salida { get; set; }
 
         [Required]
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-        public DateTime Fecha_Salida { get; set; }
-
+        public int Cantidad { get; set; }
+        public bool? is_Deleted { get; set; }
 
         [Required]
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-        public DateTime Created_at { get; set; }
 
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-        public DateTime Updated_at { get; set; }
+        public string Created_at { get; set; }
+
+        public string? Updated_at { get; set; }
 
 
     }
